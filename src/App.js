@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import HomePage from './homepage.components';
+import HomePage from './pages/homepage/homepage.components';
 
 function App() {
   return <div>
@@ -9,4 +9,11 @@ function App() {
   </div>;
 }
 
+
+
 export default App;
+
+
+// const books = {title: 'kocham Cie', price: 120};
+// const { title } = books;
+// console.log(title);
