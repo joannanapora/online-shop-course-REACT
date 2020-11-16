@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { withRouter } from 'react-router-dom';
 import './menu-item.component.scss'
 
 // functional component because we dont need our component to hold any state
 // we want to dynamicly change our title as a props (destructre the title)
-const MenuItem = ({ title, imageUrl, size }) => ( // props: { title: 'hats' }
+const MenuItem = ({ title, imageUrl, size, history }) => ( // props: { title: 'hats' }
     <div className={`${size} menu-item`}>
         <div className="background-image" style={{
             backgroundImage: `url(${imageUrl})`
@@ -17,4 +17,4 @@ const MenuItem = ({ title, imageUrl, size }) => ( // props: { title: 'hats' }
     </div>
 )
 
-export default MenuItem;
+export default withRouter(MenuItem);
