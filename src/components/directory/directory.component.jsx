@@ -7,8 +7,8 @@ import './directory.component.scss'
 // this needs to be class component because we have to store the state value of those menu items we wanna pass 
 
 class Directory extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             sections: [
@@ -50,13 +50,10 @@ class Directory extends React.Component {
     render() {
         return (
             <div className='directory-menu'>
-                {this.state.sections.map(({ title, imageUrl, id, size, linkUrl }) => (
+                {this.state.sections.map(({ id, ...otherSectionProps }) => (
                     <MenuItem
                         key={id}
-                        title={title}
-                        imageUrl={imageUrl}
-                        size={size}
-                        linkUrl={linkUrl} />
+                        {...otherSectionProps} />
                 ))}
             </div>
         );

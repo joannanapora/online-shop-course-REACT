@@ -4,8 +4,8 @@ import './menu-item.component.scss'
 
 // functional component because we dont need our component to hold any state
 // we want to dynamicly change our title as a props (destructre the title)
-const MenuItem = ({ title, imageUrl, size, history }) => ( // props: { title: 'hats' }
-    <div className={`${size} menu-item`}>
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+    <div className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
         <div className="background-image" style={{
             backgroundImage: `url(${imageUrl})`
         }} ></div>
