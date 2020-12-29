@@ -1,68 +1,25 @@
 
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { selectDirectorySections } from '../../redux/directory/directory.selector';
 import MenuItem from '../menu-item/menu-item.component';
+import { createStructuredSelector } from 'reselect';
 
 import './directory.component.scss'
 // this needs to be class component because we have to store the state value of those menu items we wanna pass 
 
-class Directory extends React.Component {
-    constructor(props) {
-        super(props);
+const Directory = ({ sections }) => (
+    <div className='directory-menu'>
+        {sections.map(({ id, ...otherSectionProps }) => (
+            <MenuItem
+                key={id}
+                {...otherSectionProps} />
+        ))}
+    </div>
+);
 
-        this.state = {
-            sections: [
-                {
-                    title: 'SEEDS & BULBS',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/VzUIxnIjSb3Rv1BQRvZ5segNXL4=/fit-in/1000x1000/photos.production.thenounproject.com/photos/6B0F0A88-5B1A-4628-AD7B-CE8B1FEC1E19.jpg',
-                    id: 1,
-                    linkUrl: 'hats'
-                },
-                {
-                    title: 'FLOWERPOTS',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/MLbto0Lj4kHihhWQOmPQcLRzXPk=/fit-in/1000x1000/photos.production.thenounproject.com/photos/0E3A598B-4526-4E49-B681-CCB8B387F6B0.jpg',
-                    id: 2,
-                    linkUrl: ''
-                },
-                {
-                    title: 'TOOLS',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/ZA3v_Cgj8U5d4JZFrEq4dPfDshE=/fit-in/1000x1000/photos.production.thenounproject.com/photos/527D7178-4A37-4F47-B49F-5BBFBA1F981E.jpg',
-                    id: 3,
-                    linkUrl: ''
-                },
-                {
-                    title: 'FURNITURES',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/LIH8cEw-uv8lSIrb-dm2qO07tV8=/fit-in/1000x1000/photos.production.thenounproject.com/photos/884D502C-1749-43EE-8F07-3D5B92C052D3.jpg',
-                    linkUrl: '',
-                    id: 4
-                },
-                {
-                    title: 'LIGHTS',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/RzTPkX9aYIJzvOt2QiT32_1d7As=/fit-in/1000x1000/photos.production.thenounproject.com/photos/CEC2454C-AE1F-4747-A8E4-3CCCD89CA16A.jpg',
-                    id: 5,
-                    linkUrl: ''
-                },
-                {
-                    title: 'FLOWERS DELIVERY',
-                    imageUrl: 'https://thumbnails.production.thenounproject.com/2Mp15Zm510SZTAukmFhf5PKCsoo=/fit-in/1000x1000/photos.production.thenounproject.com/photos/D0CA7BBD-3E7D-4B29-87A1-E703980D5EB7.jpg',
-                    linkUrl: '',
-                    id: 6
-                }]
-        }
-    }
+const mapStateToProps = createStructuredSelector({
+    sections: selectDirectorySections
+});
 
-    render() {
-        return (
-            <div className='directory-menu'>
-                {this.state.sections.map(({ id, ...otherSectionProps }) => (
-                    <MenuItem
-                        key={id}
-                        {...otherSectionProps} />
-                ))}
-            </div>
-        );
-    }
-}
-
-
-export default Directory;
+export default connect(mapStateToProps)(Directory);
