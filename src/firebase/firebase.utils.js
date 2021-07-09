@@ -3,14 +3,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-    apiKey: "AIzaSyA0nLfg37YgybGb2o5p9X-v8MpGujR09zw",
-    authDomain: "plant-db-b80ef.firebaseapp.com",
-    databaseURL: "https://plant-db-b80ef.firebaseio.com",
-    projectId: "plant-db-b80ef",
-    storageBucket: "plant-db-b80ef.appspot.com",
-    messagingSenderId: "458644915111",
-    appId: "1:458644915111:web:8b609ba27a5b48fdf3ac82",
-    measurementId: "G-LEL81M2L7K"
+    apiKey: "AIzaSyCXkbS0SfUgYaeiRPOhJBXaxhaIEpUfAzs",
+    authDomain: "plantshop-cd481.firebaseapp.com",
+    projectId: "plantshop-cd481",
+    storageBucket: "plantshop-cd481.appspot.com",
+    messagingSenderId: "902678650226",
+    appId: "1:902678650226:web:6f782f673e14ce0700d1eb",
+    measurementId: "G-7Z3445SV1D"
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {

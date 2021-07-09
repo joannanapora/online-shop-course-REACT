@@ -6,7 +6,6 @@ import MenuItem from '../menu-item/menu-item.component';
 import { createStructuredSelector } from 'reselect';
 
 import './directory.component.scss'
-// this needs to be class component because we have to store the state value of those menu items we wanna pass 
 
 const Directory = ({ sections }) => (
     <div className='directory-menu'>

@@ -1,245 +1,209 @@
 const SHOP_DATA = [
     {
         id: 1,
-        title: 'Hats',
-        routeName: 'hats',
+        title: 'Seeds',
+        routeName: 'seeds',
         items: [
             {
                 id: 1,
-                name: 'Brown Brim',
-                imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-                price: 25
+                name: 'Orchid',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139379.png',
+                price: 7 
             },
             {
                 id: 2,
-                name: 'Blue Beanie',
-                imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
-                price: 18
+                name: 'Lavender',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139380.png',
+                price: 5
             },
             {
                 id: 3,
-                name: 'Brown Cowboy',
-                imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
-                price: 35
+                name: 'Tiger Lily',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139390.png',
+                price: 6
             },
             {
                 id: 4,
-                name: 'Grey Brim',
-                imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
-                price: 25
+                name: 'Tulip',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139432.png',
+                price: 5
             },
             {
                 id: 5,
-                name: 'Green Beanie',
-                imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-                price: 18
+                name: 'Cactus',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139457.png',
+                price: 8
             },
             {
                 id: 6,
-                name: 'Palm Tree Cap',
-                imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-                price: 14
+                name: 'Daffodil',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139445.png',
+                price: 7
             },
             {
                 id: 7,
-                name: 'Red Beanie',
-                imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-                price: 18
+                name: 'Anthurium',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4139/4139503.png',
+                price: 10
             },
-            {
-                id: 8,
-                name: 'Wolf Cap',
-                imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-                price: 14
-            },
-            {
-                id: 9,
-                name: 'Blue Snapback',
-                imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-                price: 16
-            }
         ]
     },
     {
         id: 2,
-        title: 'Sneakers',
-        routeName: 'sneakers',
+        title: 'Flowerpots',
+        routeName: 'flowerpots',
         items: [
             {
                 id: 10,
-                name: 'Adidas NMD',
-                imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
-                price: 220
+                name: 'Classic FP',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/1668/1668377.png',
+                price: 30,
             },
             {
                 id: 11,
-                name: 'Adidas Yeezy',
-                imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
-                price: 280
+                name: 'Double FP',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/704/704237.png',
+                price: 55
             },
             {
                 id: 12,
-                name: 'Black Converse',
-                imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
-                price: 110
+                name: "Hanging FP",
+                imageUrl: 'https://image.flaticon.com/icons/png/512/904/904013.png',
+                price: 43,
             },
             {
                 id: 13,
-                name: 'Nike White AirForce',
-                imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
-                price: 160
+                name: "Balcony FP",
+                imageUrl: 'https://image.flaticon.com/icons/png/512/904/904029.png',
+                price: 40,
             },
             {
                 id: 14,
-                name: 'Nike Red High Tops',
-                imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
-                price: 160
+                name: "XXL FP",
+                imageUrl: 'https://image.flaticon.com/icons/png/512/1968/1968086.png',
+                price: 72,
             },
             {
                 id: 15,
-                name: 'Nike Brown High Tops',
-                imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
-                price: 160
+                name: "Decoration FP",
+                imageUrl: 'https://image.flaticon.com/icons/png/512/439/439536.png',
+                price: 45,
             },
-            {
-                id: 16,
-                name: 'Air Jordan Limited',
-                imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
-                price: 190
-            },
-            {
-                id: 17,
-                name: 'Timberlands',
-                imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
-                price: 200
-            }
         ]
     },
     {
         id: 3,
-        title: 'Jackets',
-        routeName: 'jackets',
+        title: 'Tools',
+        routeName: 'tools',
         items: [
             {
                 id: 18,
-                name: 'Black Jean Shearling',
-                imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
-                price: 125
+                name: 'Sickle',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2674/2674446.png',
+                price: 18
             },
             {
                 id: 19,
-                name: 'Blue Jean Jacket',
-                imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
-                price: 90
+                name: 'Pruning Shears',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2674/2674391.png',
+                price: 20
             },
             {
                 id: 20,
-                name: 'Grey Jean Jacket',
-                imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
-                price: 90
+                name: 'Rake',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2674/2674394.png',
+                price: 15
             },
             {
                 id: 21,
-                name: 'Brown Shearling',
-                imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
-                price: 165
+                name: 'Shovel',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2674/2674416.png',
+                price: 10
             },
             {
                 id: 22,
-                name: 'Tan Trench',
-                imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+                name: 'Watering Can',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2674/2674456.png',
                 price: 185
             }
         ]
     },
     {
         id: 4,
-        title: 'Womens',
-        routeName: 'womens',
+        title: 'Furnitures',
+        routeName: 'furnitures',
         items: [
             {
                 id: 23,
-                name: 'Blue Tanktop',
-                imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+                name: 'Stand',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/4284/4284966.png',
                 price: 25
             },
             {
                 id: 24,
-                name: 'Floral Blouse',
-                imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
-                price: 20
+                name: 'Fence',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2513/2513917.png',
+                price: 10
             },
             {
                 id: 25,
-                name: 'Floral Dress',
-                imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
-                price: 80
+                name: 'Veg Box',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/498/498229.png',
+                price: 40
             },
             {
                 id: 26,
-                name: 'Red Dots Dress',
-                imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
-                price: 80
+                name: 'Swing',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2982/2982253.png',
+                price: 120
             },
             {
                 id: 27,
-                name: 'Striped Sweater',
-                imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
-                price: 45
-            },
-            {
-                id: 28,
-                name: 'Yellow Track Suit',
-                imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
-                price: 135
-            },
-            {
-                id: 29,
-                name: 'White Blouse',
-                imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
-                price: 20
+                name: 'Wooden House',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2830/2830249.png',
+                price: 195
             }
         ]
     },
     {
         id: 5,
-        title: 'Mens',
-        routeName: 'mens',
+        title: 'Lights',
+        routeName: 'lights',
         items: [
             {
                 id: 30,
-                name: 'Camo Down Vest',
-                imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+                name: 'Lights chain',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2669/2669036.png',
                 price: 325
             },
             {
                 id: 31,
-                name: 'Floral T-shirt',
-                imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+                name: 'Classic bulb',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/3174/3174855.png',
                 price: 20
             },
             {
                 id: 32,
-                name: 'Black & White Longsleeve',
-                imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+                name: 'Light sticks',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/5017/5017119.png',
                 price: 25
             },
             {
                 id: 33,
-                name: 'Pink T-shirt',
-                imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+                name: 'Lantern',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/5018/5018777.png',
                 price: 25
             },
             {
                 id: 34,
-                name: 'Jean Long Sleeve',
-                imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+                name: 'Torch',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/2919/2919268.png',
                 price: 40
             },
             {
                 id: 35,
-                name: 'Burgundy T-shirt',
-                imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+                name: 'Spotlights',
+                imageUrl: 'https://image.flaticon.com/icons/png/512/3174/3174428.png',
                 price: 25
             }
         ]

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 80px;
   }
   
   .directory-menu {
@@ -19,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black; 
+    border: 1px solid white; 
     margin: 0 7.5px 15px;
   
     margin-right: 7.5px;
@@ -37,7 +36,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
+      border: 1px solid white;
   
       .title {
         font-weight: bold;

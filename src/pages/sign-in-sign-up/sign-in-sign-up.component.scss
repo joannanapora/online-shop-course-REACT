@@ -1,7 +1,10 @@
 .sign-in-sign-up {
-    width: 750px;
+    width: 900px;
     display: flex;
-    width: 850px;
     justify-content: space-between;
     margin: 30px auto;
-}
+    @media screen and (max-width: 999px) {
+        display: block;
+        width: 100%;
+    }
+    }
