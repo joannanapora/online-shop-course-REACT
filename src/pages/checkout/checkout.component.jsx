@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './checkout.styless.scss';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -10,14 +10,9 @@ import { clearItemFromCart } from '../../redux/cart/cart.actions';
 
 const CheckoutPage = ({ cartItems,clearItem, total }) => {
 
-    const [amount, setAmount] = useState(total)
-    console.log(cartItems)
 
 const cleanBasket = () =>{
-    setAmount("");
     cartItems.map((item)=>{
-        console.log('weszlo i usunelo')
-        console.log(cartItems)
         return clearItem(item)
     })
 
@@ -49,10 +44,13 @@ const cleanBasket = () =>{
             }
             < div className='total'>
                 <span>
-                    TOTAL: £{amount}
+                    TOTAL: £{total}
                 </span>
             </div>
-            <Stripe cleanBasket={cleanBasket} total={amount}></Stripe>
+           {cartItems.length === 0 ?
+           null :
+          <Stripe cleanBasket={cleanBasket} total={total}></Stripe> 
+        } 
         </div>)
         
 };

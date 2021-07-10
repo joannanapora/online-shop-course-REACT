@@ -51,7 +51,7 @@ const App = ({ setCurrentUser, currentUser }) => {
 
 
   return (
-    <div>
+    <div className='container' >
       <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />

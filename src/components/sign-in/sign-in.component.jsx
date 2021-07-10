@@ -10,6 +10,11 @@ const SignIn = () => {
     const [password,setPassword] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
 
+    const handleGoogleLogin = (e) => {
+        e.preventDefault();
+        signInWithGoogle();
+    }
+
     const handleSumbit = async event => {
 
         event.preventDefault();
@@ -34,7 +39,7 @@ const SignIn = () => {
                     <div className='error-message'>{errorMessage}</div>
                     <div className="buttons">
                         <CustomButton onClick={handleSumbit} type="submit"> SIGN IN </CustomButton>
-                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn >Sign in with Google</CustomButton>
+                        <CustomButton onClick={handleGoogleLogin} isGoogleSignIn >Sign in with Google</CustomButton>
                     </div>
                 </form>
             </div>

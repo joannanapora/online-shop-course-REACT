@@ -1,11 +1,13 @@
 body {
     font-family: 'Open Sans Condensed';
-    padding: 20px 60px;
+    padding: 0 60px;
+    overflow: hidden;
+    height: 100vh;
 }
 
 @media screen and (max-width: 999px) {
     body {
-      padding:  10px 20px;
+      padding:  0 20px;
     };}
 
 a {
@@ -22,4 +24,8 @@ a {
     justify-content: flex-end;
     display: flex;
     margin-top: 50px;
+}
+
+.container {
+    height: 100vh;
 }

@@ -10,12 +10,14 @@ const Collection = ({ collections, title, id }) => {
     return(
         <>
         <BackArrow/>
+        <div className='all-collections'>
         <h1>{title}</h1>
         <div className="collection-grid">
             {collections[id].items
                 .map((item) => (
                     <CollectionItem key={item.id} item={item} />
                 ))}
+    </div>
     </div>
     </>
     )
