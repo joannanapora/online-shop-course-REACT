@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/plant.svg';
@@ -12,26 +12,30 @@ import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { connect } from 'react-redux';
 import { auth } from '../../firebase/firebase.utils';
 
-const Header = ({ currentUser, hidden }) => (
+const Header = ({ currentUser, hidden }) => {
+
+
+
+    return(
     <div className="header">
         <Link className="logo-container" to="/">
             <Logo className="logo" />
         </Link>
         <div className="options">
-            <Link className="option" to="/shop">SHOP</Link>
+            <Link className="option" to="/shop">PRODUCTS</Link>
             <Link className="option" to="/contact">CONTACT</Link>
             {
                 currentUser ?
                     <div className='option' onClick={() => auth.signOut()}> SIGN OUT </div>
                     :
-                    <Link className='option' to='/sign-in'> SING IN </Link>
+                    <Link className='option' to='/sign-in'> SIGN IN </Link>
             }
             <CartIcon className="option" />
         </div>
         {
-            hidden ? null : <CartDropdown />}
+            hidden ? null : <CartDropdown  />}
     </div>
-);
+    )};
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,

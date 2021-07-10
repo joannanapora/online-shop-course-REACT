@@ -4,11 +4,12 @@ import { selectCollections } from '../../redux/shop/shop.selector';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import "./collections.style.scss";
-
+import BackArrow from "../back-arrow/back-arrow.component";
 const Collection = ({ collections, title, id }) => {
 
     return(
         <>
+        <BackArrow/>
         <h1>{title}</h1>
         <div className="collection-grid">
             {collections[id].items

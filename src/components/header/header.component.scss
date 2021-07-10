@@ -21,9 +21,11 @@
       align-items: center;
       justify-content: flex-end;
 
+
 .option {
   height: 100%;
-        padding: 15px;
+        padding: 10px;
+        border-bottom: 2px solid black;
         cursor: pointer;
         @media screen and (max-width: 600px) {
           margin-right: 0px

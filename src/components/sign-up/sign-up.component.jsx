@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './sign-up.component.scss'
 
 import FormInput from '../form-input/form-input.component';
@@ -6,81 +6,49 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
+const SignUp = () => {
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [confirmPassword,setConfirmPassword] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
 
-class SignUp extends React.Component {
-    constructor() {
-        super();
-
-
-        this.state = {
-            displayName: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
-        }
-    }
-
-    handleSubmit = async event => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
-        const { displayName, email, password, confirmPassword } = this.state;
-
         if (password !== confirmPassword) {
-            alert('passwords do not match');
+            setErrorMessage("Passwords don't match")
             return;
         }
 
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password)
 
-            await createUserProfileDocument(user, { displayName });
-            this.setState({
-                displayName: '',
-                email: '',
-                password: '',
-                confirmPassword: ''
-            }
-
-            )
-
+            await createUserProfileDocument(user);
+            setPassword(""); 
+            setEmail(""); 
+            setConfirmPassword("");
         } catch (error) {
-            console.error(error);
+            setErrorMessage(error.message)
         }
     }
 
-    handleChange = event => {
-        const { name, value } = event.target;
-        this.setState({ [name]: value });
-    }
-
-
-    render() {
-        const { displayName, email, password, confirmPassword } = this.state;
         return (
             <div className="sign-up">
                 <h2 className="title"> I am new user</h2>
                 <span> Sign up with email and password</span>
-                <form className="sign-up-form" onSubmit={this.handleSubmit}>
-                    <FormInput
-                        type="text"
-                        name="displayName"
-                        value={displayName}
-                        onChange={this.handleChange}
-                        label='Display Name'
-                        required />
-
+                <form className="sign-up-form" onSubmit={handleSubmit}>
                     <FormInput
                         type="email"
                         name="email"
                         value={email}
-                        onChange={this.handleChange}
+                        onChange={(e)=>setEmail(e.target.value)}
                         label='Email'
                         required />
                     <FormInput
                         type="password"
                         name="password"
                         value={password}
-                        onChange={this.handleChange}
+                        onChange={(e)=>setPassword(e.target.value)}
                         label='Password'
                         required />
 
@@ -88,14 +56,14 @@ class SignUp extends React.Component {
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
-                        onChange={this.handleChange}
+                        onChange={(e)=>setConfirmPassword(e.target.value)}
                         label='Confirm Password'
                         required />
-                    <CustomButton type='submit'>Sign Up</CustomButton>
+                        <div className='error-message'>{errorMessage}</div>
+                    <CustomButton onClick={handleSubmit} type='submit'>Sign Up</CustomButton>
                 </form>
             </div>
         )
-    }
 }
 
 

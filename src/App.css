@@ -16,3 +16,10 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.icons-author {
+    width: inherit;
+    justify-content: flex-end;
+    display: flex;
+    margin-top: 50px;
+}

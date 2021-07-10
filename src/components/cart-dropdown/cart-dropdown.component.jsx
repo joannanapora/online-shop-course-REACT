@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import './cart-dropdown.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
@@ -10,8 +10,26 @@ import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
 
-const CartDropdown = ({ cartItems, history, dispatch }) => (
-    <div className="cart-dropdown">
+const CartDropdown = ({ cartItems, history, dispatch }) => {
+
+
+    const ref = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+            dispatch(toggleCartHidden());
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    });
+
+    return (
+    <div ref={ref} className="cart-dropdown">
         <div className="cart-items">
 
             {
@@ -29,7 +47,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
                 dispatch(toggleCartHidden());
             }} > GO TO CHECKOUT </CustomButton>
     </div >
-);
+)};
 
 const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems

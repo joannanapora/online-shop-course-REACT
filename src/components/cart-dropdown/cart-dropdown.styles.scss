@@ -8,9 +8,13 @@
     border: 1px solid white;
     background-color: white;
     top: 112px;
-    right: 135px;
+    right: 90px;
     z-index: 5;
     color:black;
+    @media screen and (max-width: 420px) {
+      top: 100px;
+      right: 40px;
+    }
   
     .cart-items {
       height: 240px;
