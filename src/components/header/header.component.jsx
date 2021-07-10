@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/plant.svg';
@@ -14,10 +14,25 @@ import { auth } from '../../firebase/firebase.utils';
 
 const Header = ({ currentUser, hidden }) => {
 
+    const [isSticky, setSticky] = useState(false);
 
+    const ref = useRef(null);
+  const handleScroll = () => {
+    if (ref.current) {
+      setSticky(ref.current.getBoundingClientRect().top <= 0);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    };
+  }, []);
 
     return(
-    <div className="header">
+    <div ref={ref} className={isSticky ? "header-sticky" : "header"}>
         <Link className="logo-container" to="/">
             <Logo className="logo" />
         </Link>
