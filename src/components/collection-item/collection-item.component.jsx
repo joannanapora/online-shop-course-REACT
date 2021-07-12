@@ -22,7 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
     },[])
 
     return (
-        
+        <>
         <div className="collection-item">
             <div className="image"
                 style={{
@@ -34,12 +34,12 @@ const CollectionItem = ({ item, addItem }) => {
                 <span className="price">£{price}</span>
             </div>
             <CustomButton onClick={() => handleClick(item)} inverted > ADD TO BASKET </CustomButton>
+           </div>
        {
            addedInfo ? 
 <div className='added-info'>Item added to basket!</div>
        : null}
-        </div>
-        
+        </>
     )
 };
 
