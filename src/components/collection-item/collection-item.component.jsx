@@ -24,6 +24,11 @@ const CollectionItem = ({ item, addItem }) => {
     return (
         <>
         <div className="collection-item">
+            {
+                
+           addedInfo ? 
+          <div className='added-info'>Item added to basket!</div>
+           : null}
             <div className="image"
                 style={{
                     backgroundImage: `url(${imageUrl})`
@@ -33,12 +38,11 @@ const CollectionItem = ({ item, addItem }) => {
                 <span className="name">{name}</span>
                 <span className="price">£{price}</span>
             </div>
-            <CustomButton onClick={() => handleClick(item)} inverted > ADD TO BASKET </CustomButton>
+            <CustomButton onClick={() => handleClick(item)} inverted > ADD TO BASKET 
+            
+            </CustomButton>
+
            </div>
-       {
-           addedInfo ? 
-<div className='added-info'>Item added to basket!</div>
-       : null}
         </>
     )
 };
